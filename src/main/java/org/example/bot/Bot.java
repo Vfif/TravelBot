@@ -35,12 +35,15 @@ public class Bot extends TelegramLongPollingBot {
     public void onUpdateReceived(Update update) {
         Message message = update.getMessage();
         if (message != null && message.hasText()) {
-            Optional<City> city = cityService.findByName(message.getText());
+            City city = cityService.findByName(message.getText())
+                                    .orElse(City.builder()
+                                            .info(NO_INFORMATION_ABOUT_THIS_CITY)
+                                            .build());
+
             SendMessage sendMessage = new SendMessage();
+            sendMessage.setText(city.getInfo());
+            sendMessage.setChatId(message.getChatId());
 
-            sendMessage.setText(city.isPresent() ? city.get().getInfo() : NO_INFORMATION_ABOUT_THIS_CITY);
-
-            sendMessage.setChatId(update.getMessage().getChatId());
             try {
                 execute(sendMessage);
                 log.info("Send message: " + sendMessage.getText());
