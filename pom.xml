@@ -16,7 +16,6 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <start-class>org.org.example.App</start-class>
         <java.version>1.8</java.version>
         <lombok.version>1.18.10</lombok.version>
         <telegram.version>4.9</telegram.version>
