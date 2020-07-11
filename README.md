@@ -11,6 +11,7 @@
 - SpringData
 - Hibernate
 - Java 1.8
+- PostgreSQL
 - Maven
 
  How to start
@@ -29,17 +30,19 @@
 *	***GET:*** */cities - Gets all cities information;
 *	***POST:*** */cities - Save city information:
 
-    Body in JSON-format: 
-    {
-        "name": "Minsk",
-        "info": "Beautiful place"
-    }
+	Body in JSON-format: 
+	
+		{
+		    "name": "Minsk",
+		    "info": "Beautiful place"
+		}
 
 *	***PUT:*** */cities/{id} - Edit city information by id:
 
-	Body in JSON-format:
-    {
-        "info": "Beautiful place to walk with family"
-    }
+	Body in JSON-format: 
+	
+		{
+		    "info": "Beautiful place to walk with family"
+		}
 
 *	***DELETE:*** */cities/{id} - Delete city information by id.
