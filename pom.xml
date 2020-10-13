@@ -23,7 +23,7 @@
         <rest.assured.version>2.3.3</rest.assured.version>
         <spring-test>2.1.6.RELEASE</spring-test>
         <geo-database>2.8.0</geo-database>
-        <junit>4.12</junit>
+        <junit>4.13.1</junit>
         <jupiter>5.5.2</jupiter>
     </properties>
 
